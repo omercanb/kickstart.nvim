@@ -83,4 +83,13 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- Indenting
-vim.o.shiftwidth = 4
+vim.opt.tabstop = 4 -- A tab looks like 4 spaces
+vim.opt.shiftwidth = 4 -- Size of an indent
+vim.opt.softtabstop = 4 -- Backspace/Tab moves 4 spaces
+vim.opt.expandtab = true -- Use spaces instead of tabs
+-- vim.o.shiftwidth = 2
+-- -- vim.opt.tabstop = 2
+-- -- unsure if needed vim.opt.expandtab = true
+-- vim.opt.softtabstop = 2
+
+vim.lsp.inlay_hint.enable(true)

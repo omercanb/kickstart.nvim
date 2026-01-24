@@ -6,7 +6,7 @@
 vim.keymap.set('n', '<C-c>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -18,3 +18,9 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>ya', '<cmd>%y<CR>', { desc = 'Yank entire buffer' })
+
+vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Go to explorer' })
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
+vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit vim' })
+
+vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { desc = 'Omnicomplete to Contorl Space', noremap = true, silent = true })
