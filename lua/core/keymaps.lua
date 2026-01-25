@@ -23,4 +23,4 @@ vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Go to explorer' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit vim' })
 
-vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { desc = 'Omnicomplete to Contorl Space', noremap = true, silent = true })
+-- vim.keymap.set('i', '<C-N>', '<C-x><C-o>', { desc = 'Omnicomplete to Control N', noremap = true, silent = true })

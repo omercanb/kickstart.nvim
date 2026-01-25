@@ -1,5 +1,7 @@
 return {
+
   'saghen/blink.cmp',
+
   -- optional: provides snippets for the snippet source
   dependencies = { 'rafamadriz/friendly-snippets' },
 
@@ -11,6 +13,7 @@ return {
   -- build = 'nix run .#build-plugin',
 
   ---@module 'blink.cmp'
+
   ---@type blink.cmp.Config
   opts = {
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
@@ -25,8 +28,22 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
 
+    keymap = {
+      preset = 'default',
+      ['<C-l>'] = { 'show', 'show_documentation', 'hide_documentation' },
+      --   function(cmp)
+      --     cmp.show()
+      --     return true
+      --   end,
+      -- },
+      --
+      -- ['<C-space>'] = {
+      --   function(cmp)
+      --     return true
+      --   end,
+      -- },
+    },
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- Adjusts spacing to ensure icons are aligned
@@ -41,6 +58,8 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
+
+    signature = { enabled = true },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
     -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,

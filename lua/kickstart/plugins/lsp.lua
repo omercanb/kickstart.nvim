@@ -7,7 +7,14 @@ return {
     -- Mason must be loaded before its dependents so we need to set it up here.
     -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
     { 'mason-org/mason.nvim', opts = {} },
-    'mason-org/mason-lspconfig.nvim',
+    {
+      'mason-org/mason-lspconfig.nvim',
+      automatic_enable = {
+        exclude = {
+          'jdtls',
+        },
+      },
+    },
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
@@ -215,7 +222,7 @@ return {
           },
         },
       },
-      -- jdtls = { root_dir = vim.fn.getcwd() },
+      jdtls = {},
       -- pyright = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
